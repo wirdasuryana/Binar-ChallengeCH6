@@ -1,6 +1,7 @@
 const express =require('express');
-const app = express()
-const post = require ('./db/posts.jason')
+const app = express();
+const post = require ('./db/posts.jason');
+const port = 3000;
 
 app.set('view engine','ejs')
 app.set(express.urlencoded({extended:false}))
@@ -15,6 +16,6 @@ app.get('/login', (req, res) =>{
   console.log('data is taken');
 })
 
-app.listen(3000, () => {
-  console.log('server is running');
-})
+app.listen(port, () => {
+  console.log('server is running.... http://localhost:${port}');
+});
